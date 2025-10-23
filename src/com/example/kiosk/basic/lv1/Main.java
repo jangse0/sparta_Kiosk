@@ -32,6 +32,9 @@ public class Main {
             else if (answer >= 1 && answer <= menuItems.size()){
                 System.out.println(menuItems.get(answer-1).get(0) + "을 선택하셨습니다.\n\n");
             }
+            else{
+                System.out.println("올바른 메뉴 번호를 선택해주세요\n\n");
+            }
 
         }
     }
