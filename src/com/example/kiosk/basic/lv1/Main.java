@@ -26,7 +26,7 @@ public class Main {
             System.out.println("0. 종료      | 종료");
             answer = sc.nextInt();
 
-            if (answer == 0){
+            if (answer == 0){ //0이면 종료
                 System.out.println("프로그램을 종료합니다."); break;
             }
             else if (answer >= 1 && answer <= menuItems.size()){
