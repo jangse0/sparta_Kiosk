@@ -31,7 +31,7 @@ public class Main {
                 System.out.println("프로그램을 종료합니다."); break;
             }
             else if (answer >= 1 && answer <= menuItems.size()){
-                System.out.println(menuItems.get(answer-1).getName()+ "을 선택하셨습니다.\n\n");
+                System.out.println(menuItems.get(answer-1)+ "을 선택하셨습니다.\n\n");
             }
             else{
                 System.out.println("올바른 메뉴 번호를 선택해주세요\n\n");

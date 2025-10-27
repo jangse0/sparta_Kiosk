@@ -1,4 +1,4 @@
-package com.example.kiosk.basic.lv2;
+package com.example.kiosk.basic.lv3;
 
 public class MenuItem {
     private String name;
