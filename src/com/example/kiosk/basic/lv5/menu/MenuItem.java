@@ -1,8 +1,7 @@
-/*
 package com.example.kiosk.basic.lv5.menu;
 
 public class MenuItem {
-    private String name;
+        private String name;
     private double price;
     private String description;
 
@@ -12,7 +11,7 @@ public class MenuItem {
         this.description = description;
     }
 
-    //메뉴 이름
+    //메뉴 이름 Getter Setter
     public String getName() {
         return name;
     }
@@ -39,11 +38,5 @@ public class MenuItem {
         this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%-15s | W %.1f | %s", name, price, description);
-    }
-
 
 }
-*/
