@@ -7,7 +7,7 @@
 - 0 입력 시 프로그램 종료
 
 
-lv1
+출력 결과
 ```
 [ SHAKESHACK MENU ]
 1. ShackBurger     | W 6.9 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거
@@ -59,4 +59,27 @@ MenuItem 클래스 생성
 <br>
 <br>
 
-###
+### lv3
+
+(1) MenuItem 클래스
+- 개별 메뉴 관리
+- 필드 : name, price, description(이름, 가격, 설명)
+
+(2) Kiosk 클래스
+키오스크의 흐름 제어
+- 필드 : List<MenuItem> menuItems
+
+(3) Main 클래스
+- MenuItem 객체 생성(메뉴 추가)
+- 키오스크를 생성하고 메뉴 리스트 전달
+- kiosk.start로 키오스크 시작
+
+
+---
+
+<br>
+<br>
+<br>
+<br>
+
+### lv4
