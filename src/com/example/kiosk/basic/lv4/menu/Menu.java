@@ -18,6 +18,7 @@ public class Menu {
         this.category = category;
     }
 
+    // 해당하는 메뉴 가져오기
     public List<MenuItem> getItems() {
         return items;
     }
