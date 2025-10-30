@@ -14,6 +14,7 @@ public class Kiosk {
     }
 
     private void printMainMenu() {
+        System.out.println("[ MAIN MENU ]");
         int i = 0;
         for (Menu menu : menus) {
             i++;
