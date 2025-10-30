@@ -4,9 +4,7 @@ import com.example.kiosk.challenge.lv1.kiosk.Kiosk;
 import com.example.kiosk.challenge.lv1.menu.Menu;
 import com.example.kiosk.challenge.lv1.menu.MenuItem;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args){

@@ -1,12 +1,11 @@
 package com.example.kiosk.challenge.lv1.kiosk;
 
 import com.example.kiosk.challenge.lv1.cart.Cart;
+import com.example.kiosk.challenge.lv1.cart.CartItem;
 import com.example.kiosk.challenge.lv1.menu.Menu;
 import com.example.kiosk.challenge.lv1.menu.MenuItem;
 
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Kiosk {
     private List<Menu> menus;
@@ -86,11 +85,50 @@ public class Kiosk {
     }
 
     private void handleOrder() {
+        System.out.println("[ Orders ]");
+        for (CartItem cartItem : cart.getCartItems()) {
+            MenuItem item = cartItem.getItem();
+
+            System.out.println(String.format("%s | W %.1f | %s", item.getName(), item.getPrice(), item.getDescription()));
+        }
+        System.out.println("\n[ Total] ");
+        System.out.println("W " + cart.getTotalPrice());
+        System.out.println("\n1. 주문     2. 메뉴판");
+
+        int sel;
+        try {
+            sel = sc.nextInt();
+        }
+        catch(InputMismatchException e){
+            System.out.println("유효한 정수만 입력해주세요(메뉴판으로 돌아갑니다)");
+            //sc.nextLine();
+            return;
+        }
+
+        try {
+            if(sel == 1) {
+                double total = cart.getTotalPrice();
+                cart.getCartItems().clear();
+                System.out.println("주문이 완료되었습니다. 금액은 W " + total + "입니다.");
+
+            }
+            else if(sel == 2) {
+                return;
+            }
+            else
+                throw new IllegalArgumentException("올바른 번호를 입력하세요");
+
+        }catch(IllegalArgumentException e){
+            System.out.println(e.getMessage() + "(메뉴판으로 돌아갑니다)\n");
+        }
+
+
 
     }
 
     private void handleCancel(){
-
+        cart.getCartItems().clear();
+        System.out.println("주문을 취소합니다.");
     }
 
     private void handleCategory(Menu menu) {
@@ -135,9 +173,11 @@ public class Kiosk {
                     cart.addItem(selectedItem);
                     System.out.println();
                     System.out.println(selectedItem.getName() + " 이 장바구니에 추가되었습니다.");
+                    break;
                 }
                 else if (answer == 2) {
                     System.out.println("취소");
+                    break;
 
                 }
                 else {
