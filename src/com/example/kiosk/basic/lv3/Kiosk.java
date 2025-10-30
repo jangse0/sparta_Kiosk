@@ -24,6 +24,7 @@ public class Kiosk {
         System.out.println(String.format("%-15s | W %.1f | %s", menuItem.getName(), menuItem.getPrice(), menuItem.getDescription()));
     }
 
+    // 키오스크 시작
     public void start() {
         while (true) {
             printMenu();
