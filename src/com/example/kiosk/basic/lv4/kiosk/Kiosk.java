@@ -44,6 +44,7 @@ public class Kiosk {
         }
     }
 
+    // 카테고리 선택 후 제어
     private void handleCategory(Menu menu) {
         while (true) {
             printCategoryMenu(menu);
@@ -68,6 +69,8 @@ public class Kiosk {
         }
     }
 
+
+    //출력 예시에 맞추어 출력
     private void printCategoryMenu(Menu menu) {
         System.out.println("[ " + menu.getCategory().toUpperCase() + " MENU ]");
         List<MenuItem> items = menu.getItems();
@@ -81,15 +84,19 @@ public class Kiosk {
         System.out.println("0. 뒤로가기");
     }
 
+    //선택한 메뉴 출력
     private void printSelectedItem(MenuItem item) {
         System.out.println(String.format("선택한 메뉴 : %-15s | W %.1f | %s",
                 item.getName(), item.getPrice(), item.getDescription()));
     }
 
+    // Getter
     public List<Menu> getMenus() {
         return menus;
     }
 
+
+    //Setter
     public void setMenus(List<Menu> menus) {
         this.menus = menus;
     }

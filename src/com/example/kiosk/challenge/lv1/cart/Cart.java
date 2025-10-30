@@ -13,6 +13,7 @@ public class Cart {
         return items;
     }
 
+    // 음식 담기
     public void addItem(MenuItem item) {
         for (CartItem cartItem : items) {
             if (cartItem.getItem().getName().equals(item.getName())) {
@@ -24,10 +25,20 @@ public class Cart {
         items.add(new CartItem(item,1));
     }
 
+    // 담은 항목 삭제
     public void removeItem(MenuItem item) {
+        CartItem target = null;
         for (CartItem cartItem : items) {
             if (cartItem.getItem().getName().equals(item.getName())) {
+                target = cartItem;
+                break;
+            }
+        }
 
+        if (target != null) {
+            target.subQuantity();
+            if (target.getQuantity() == 0) {
+                items.remove(target);
             }
         }
     }
